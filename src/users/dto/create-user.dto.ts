@@ -1,10 +1,12 @@
-import { IsArray, IsEmail, IsEmpty, IsString } from 'class-validator';
+import { IsArray, IsEmail, IsOptional, IsString, IsUrl } from 'class-validator';
 
 export class CreateUserDto {
-  @IsEmpty()
+  @IsString()
+  @IsOptional()
   userGithub: string;
 
-  @IsEmpty()
+  @IsUrl()
+  @IsOptional()
   avatarURL: string;
 
   @IsString()
@@ -20,5 +22,5 @@ export class CreateUserDto {
   formation: string;
 
   @IsArray()
-  tecnologies: string[];
+  technologies: string[];
 }
