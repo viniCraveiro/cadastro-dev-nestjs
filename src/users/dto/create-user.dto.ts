@@ -1,4 +1,4 @@
-import { IsArray, IsEmail, IsOptional, IsString, IsUrl } from 'class-validator';
+import { IsEmail, IsOptional, IsString, IsUrl } from 'class-validator';
 
 export class CreateUserDto {
   @IsString()
@@ -21,6 +21,6 @@ export class CreateUserDto {
   @IsString()
   formation: string;
 
-  @IsArray()
-  technologies: string[];
+  @IsString()
+  technologies: string;
 }

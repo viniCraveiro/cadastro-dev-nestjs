@@ -24,7 +24,7 @@ export class User {
   formation: string;
 
   @Prop()
-  technologies: string[];
+  technologies: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

@@ -40,4 +40,8 @@ export class UsersService {
     this.userModel.deleteOne({ _id: id }).exec();
     return `User removed with id: ${id}`;
   }
+
+  async findByName(name: string): Promise<User[]> {
+    return this.userModel.find({ name: { $regex: name, $options: 'i' } }).exec();
+  }
 }
